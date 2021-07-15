@@ -3,7 +3,7 @@
 #**********************************#
 SOURCE_FOLDER=source	#los .cpp
 TMP_FOLDER=tmp          #los .o generados
-BUILD_FOLDER=build      #los .exe generados
+BUILD_FOLDER=bin      #los .exe generados
 
 #**********************************#
 #            Compilacion           #
