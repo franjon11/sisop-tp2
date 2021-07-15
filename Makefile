@@ -1,19 +1,19 @@
 #**********************************#
-#		 	  Carpetas		       #
+#		 	  Carpetas             #
 #**********************************#
 SOURCE_FOLDER=source	#los .cpp
-TMP_FOLDER=tmp 			#los .o generados
-BUILD_FOLDER=build		#los .exe generados
+TMP_FOLDER=tmp          #los .o generados
+BUILD_FOLDER=build      #los .exe generados
 
 #**********************************#
-#		 	Compilacion		       #
+#		 	Compilacion            #
 #**********************************#
 CXX=g++
 CFLAGS=-Wall
 CPPFLAGS=-lstdc++
 
 #**********************************#
-#		 	  Reglas		       #
+#		 	  Reglas               #
 #**********************************#
 
 .PHONY: all clean
