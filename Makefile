@@ -24,3 +24,4 @@ all: $(SOURCE_FOLDER) $(TMP_FOLDER) $(BUILD_FOLDER)
 clean:
 	rm -r $(TMP_FOLDER) $(BUILD_FOLDER)
 
+
