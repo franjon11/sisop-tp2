@@ -1,9 +1,24 @@
+/*
+###################INTEGRANTES - TP2#################
+#     Nombre y apellido     -         Padrón        #
+-----------------------------------------------------
+# Nasif Francisco José      -         101044        #
+# Hejeij Agustin            -                       #
+# Jacinto Renzo             -                       #
+# Fanciotti Tomas           -                       #  
+#####################################################
+*/
+
+
 #include "../includes.h"
 #include "../Area.h"
 #include "../Sem-SV/sv_shm.h"
 #include "../Sem-SV/sv_sem.h"
 
 int main(){
+
+    print_integrantes();
+    
     sv_shm a51(AREA51);
     sv_sem balsa(SEM_BALSA);
     sv_sem mutex(SEM_MUTEX);

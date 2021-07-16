@@ -1,7 +1,20 @@
+/*
+###################INTEGRANTES - TP2#################
+#     Nombre y apellido     -         Padrón        #
+-----------------------------------------------------
+# Nasif Francisco José      -         101044        #
+# Hejeij Agustin            -                       #
+# Jacinto Renzo             -                       #
+# Fanciotti Tomas           -                       #  
+#####################################################
+*/
+
 #include "../includes.h"
 #include "../Sem-SV/sv_sem.h"
 
 int main() {
+
+    print_integrantes();
 
     // Creo el Area 51
     sv_shm a51(AREA51);

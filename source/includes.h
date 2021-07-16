@@ -32,4 +32,16 @@
 #define SEM_SERFS "A51_serfs"
 #define INI_SERFS 3
 
-using namespace std;								
+using namespace std;
+
+void print_integrantes(){
+    
+    cout<<"Integrantes TP2"<<endl;
+    cout<<"------------------------"<<endl;
+    cout<<"Nasif Francisco José - 101044"<<endl;
+    cout<<"Hejeij Agustín - "<<endl;
+    cout<<"Jacinto Renzo - "<<endl;
+    cout<<"Fanciotti Tomas - "<<endl;
+    cout<<"------------------------"<<endl;
+
+}								
