@@ -10,10 +10,10 @@
 */
 
 
-#include "../includes.h"
-#include "../Area.h"
-#include "../Sem-SV/sv_shm.h"
-#include "../Sem-SV/sv_sem.h"
+#include "../includes/includes.h"
+#include "../includes/Area.h"
+#include "../includes/sv_shm.h"
+#include "../includes/sv_sem.h"
 
 int main(){
 

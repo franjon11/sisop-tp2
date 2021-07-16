@@ -9,8 +9,8 @@
 #####################################################
 */
 
-#include "../includes.h"
-#include "../Sem-SV/sv_sem.h"
+#include "../includes/includes.h"
+#include "../includes/sv_sem.h"
 
 int main() {
 
