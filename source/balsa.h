@@ -34,5 +34,5 @@ bool Balsa::addSerf(){
 
 bool Balsa::isFull(){
 
-    return (nerds + serfs) >= 4
+    return (nerds + serfs) >= 4;
 }
