@@ -1,5 +1,7 @@
 #ifndef Mensaje_h
 #define Mensaje_h
+#import "includes.h"
+
 using namespace std;
 class Mensaje{
 	char dato [40];
@@ -17,8 +19,6 @@ class Mensaje{
 		void setDato(string d){
 		  strcpy (dato,d.c_str());
 		}
-		
-		
 	
 		friend ostream& operator<<(ostream& os, Mensaje m){
 			return os<<"("<<m.getDato()<<")";

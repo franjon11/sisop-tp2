@@ -38,7 +38,7 @@ int main(){
         if (area->esFin()) break;
 
         mutex.wait();
-        dato=a->saca();
+        dato=area->saca();
         mutex.post();
   
         cout<<"leido: <"<<dato.getDato()<<">"<<endl;
@@ -46,5 +46,5 @@ int main(){
         serfs.post();
     }             
     balsa.post();  //libera en cadena a los consumidores
-    cout<<nom<<" termina"<<endl;
+    cout<<"nom"<<" termina"<<endl; //TODO: "nom" hecho string por error "undelcared identifier"
 }

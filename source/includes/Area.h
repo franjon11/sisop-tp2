@@ -1,18 +1,20 @@
 #ifndef Area_h
 #define Area_h
 
+#include "Mensaje.h"
+
 class Area{
 	public:
 		static const int size =5;
 	private:
 		Mensaje  ms [size];
-		bool finalizo;
-		int ip;
-		int is;
+		bool finalizo=false;
+		int ip=0;
+		int is=0;
 		int iPone();
 		int iSaca();
 	public:
-		Area():ip(0),is(0),finalizo(false){ cout<<"Construida un Area"<<endl;};
+		Area(){ cout<<"Construida un Area"<<endl;};
 		Mensaje & operator [] (int i);
 		void pone(Mensaje m);
 		Mensaje saca();

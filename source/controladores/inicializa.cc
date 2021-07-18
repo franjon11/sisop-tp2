@@ -11,6 +11,7 @@
 
 #include "../includes/includes.h"
 #include "../includes/sv_sem.h"
+#include "../includes/sv_shm.h"
 
 int main() {
 

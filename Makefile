@@ -1,11 +1,11 @@
 #**********************************#
 #             Carpetas             #
 #**********************************#
-SOURCE_FOLDER=source	#los .cc
+SOURCE_FOLDER=source
 
 CONSUM_PRODS=consum-prods
 CONTROLS=controladores
-INCLUDES=Sem-SV
+INCLUDES=includes
 
 TMP_FOLDER=tmp      #los .o generados
 BUILD_FOLDER=bin      #los .exe generados
@@ -21,7 +21,7 @@ SV_SEM = $(SOURCE_FOLDER)/$(INCLUDES)/sv_sem.h
 SV_SHM = $(SOURCE_FOLDER)/$(INCLUDES)/sv_shm.h
 
 SERFS = serfs
-NERFS = nerfs
+NERDS = nerds
 BALSAS = balsas
 
 INIT = inicializa
@@ -32,9 +32,9 @@ LIB = libera
 #            Compilacion           #
 #**********************************#
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -g
+CXXFLAGS = -std=c++11 -Wall -g -c -w
 
-TODOS = $(SERFS) $(NERFS) $(BALSAS) $(INIT) $(FIN) $(LIB)
+TODOS = $(SERFS) $(NERDS) $(BALSAS) $(INIT) $(FIN) $(LIB)
 
 INCLUDE1 = ${INCLUDE} ${AREA} ${MENSAJE} ${SV_SEM} ${SV_SHM}
 INCLUDE2 = ${INCLUDE} ${SV_SEM}
@@ -47,22 +47,22 @@ INCLUDE3 = ${INCLUDE} ${SV_SEM} ${SV_SHM} ${AREA}
 #.PHONY: all clean
 all: $(TODOS)
 
-$(SERFS).o: $(SERFS).cc $(INCLUDE1)
+$(SERFS): 
 	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(SERFS).cc
 
-$(NERFS).o: $(NERFS).cc $(INCLUDE1)
-	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(NERFS).cc
+$(NERDS): 
+	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(NERDS).cc
 
-$(BALSAS).o: $(BALSAS).cc $(INCLUDE1)
+$(BALSAS): 
 	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(BALSAS).cc
 
-$(INIT).o: $(INIT).cc $(INCLUDE2)
+$(INIT): 
 	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONTROLS)/$(INIT).cc
 
-$(FIN).o: $(FIN).cc $(INCLUDE3)
+$(FIN): 
 	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONTROLS)/$(FIN).cc
 
-$(LIB).o: $(LIB).cc $(INCLUDE3)
+$(LIB): 
 	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONTROLS)/$(LIB).cc
 
 clean:

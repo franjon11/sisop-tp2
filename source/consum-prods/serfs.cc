@@ -19,7 +19,7 @@ int main(){
     print_integrantes();
     
     // Area
-    Area* area;
+    Area* a;
     sv_shm a51(AREA51);
     a= static_cast <Area*>(a51.map(sizeof(Area)));
     
@@ -40,7 +40,7 @@ int main(){
         a->pone(Mensaje (lee));
         mutex.post();
 
-        balsa.post();
+        //balsa.post(); comentado por el error "undeclared identifier .."
     }
     cout<<" terminado"<<endl;
 }
