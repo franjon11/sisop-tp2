@@ -1,14 +1,14 @@
 #**********************************#
 #             Carpetas             #
 #**********************************#
-SOURCE_FOLDER=source
+SOURCE_FOLDER=$(PWD)/source
 
 CONSUM_PRODS=consum-prods
 CONTROLS=controladores
 INCLUDES=includes
 
-TMP_FOLDER=tmp      #los .o generados
-BUILD_FOLDER=bin      #los .exe generados
+TMP_FOLDER=tmp   #los .o generados
+BUILD_FOLDER=bin #los .exe generados
 
 #**********************************#
 #            Codigos               #
@@ -32,7 +32,7 @@ LIB = libera
 #            Compilacion           #
 #**********************************#
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -g -c -w
+CXXFLAGS = -std=c++11 -Wall -g -w
 
 TODOS = $(SERFS) $(NERDS) $(BALSAS) $(INIT) $(FIN) $(LIB)
 
@@ -47,23 +47,23 @@ INCLUDE3 = ${INCLUDE} ${SV_SEM} ${SV_SHM} ${AREA}
 #.PHONY: all clean
 all: $(TODOS)
 
-$(SERFS): 
-	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(SERFS).cc
+$(SERFS): $(BUILD_FOLDER) $(INCLUDE1) $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(SERFS).cc
+	cd $(BUILD_FOLDER); $(CXX) $(CXXFLAGS) $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(SERFS).cc -o $(SERFS)
 
-$(NERDS): 
-	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(NERDS).cc
+$(NERDS): $(BUILD_FOLDER) $(INCLUDE1) $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(SERFS).cc
+	cd $(BUILD_FOLDER); $(CXX) $(CXXFLAGS) $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(NERDS).cc -o $(NERDS)
 
-$(BALSAS): 
-	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(BALSAS).cc
+$(BALSAS): $(BUILD_FOLDER) $(INCLUDE1) $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(SERFS).cc
+	cd $(BUILD_FOLDER); $(CXX) $(CXXFLAGS) $(SOURCE_FOLDER)/$(CONSUM_PRODS)/$(BALSAS).cc -o $(BALSAS)
 
-$(INIT): 
-	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONTROLS)/$(INIT).cc
+$(INIT): $(BUILD_FOLDER) $(INCLUDE2) $(SOURCE_FOLDER)/$(CONTROLS)/$(INIT).cc
+	cd $(BUILD_FOLDER); $(CXX) $(CXXFLAGS) $(SOURCE_FOLDER)/$(CONTROLS)/$(INIT).cc -o $(INIT)
 
-$(FIN): 
-	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONTROLS)/$(FIN).cc
+$(FIN): $(BUILD_FOLDER) $(INCLUDE3) $(SOURCE_FOLDER)/$(CONTROLS)/$(FIN).cc
+	cd $(BUILD_FOLDER); $(CXX) $(CXXFLAGS) $(SOURCE_FOLDER)/$(CONTROLS)/$(FIN).cc -o $(FIN)
 
-$(LIB): 
-	$(CXX) $(CXXFLAGS) -c $(SOURCE_FOLDER)/$(CONTROLS)/$(LIB).cc
+$(LIB): $(BUILD_FOLDER) $(INCLUDE3) $(SOURCE_FOLDER)/$(CONTROLS)/$(LIB).cc
+	cd $(BUILD_FOLDER); $(CXX) $(CXXFLAGS) $(SOURCE_FOLDER)/$(CONTROLS)/$(LIB).cc -o $(LIB)
 
 clean:
-	rm -r $(BUILD_FOLDER) $(TMP_FOLDER)
+	rm $(BUILD_FOLDER) $(TMP_FOLDER)
