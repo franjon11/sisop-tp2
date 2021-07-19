@@ -28,22 +28,23 @@
 #define SEM_MUTEX "A51_mutex"
 #define INI_MUTEX 1
 
-#define SEM_NERFS "A51_nerfs"
-#define INI_NERFS 2
+#define SEM_NERDS "A51_nerds"
+#define INI_NERDS 0
 
 #define SEM_SERFS "A51_serfs"
-#define INI_SERFS 3
+#define INI_SERFS 0
+
 
 using namespace std;
 
 void print_integrantes(){
-    
+
     cout<<"Integrantes TP2"<<endl;
     cout<<"------------------------"<<endl;
     cout<<"Nasif Francisco José - 101044"<<endl;
     cout<<"Hejeij Agustín - "<<endl;
     cout<<"Jacinto Renzo - "<<endl;
-    cout<<"Fanciotti Tomas - "<<endl;
+    cout<<"Fanciotti Tomás - 102179"<<endl;
     cout<<"------------------------"<<endl;
 
 }								

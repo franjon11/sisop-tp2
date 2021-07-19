@@ -17,12 +17,14 @@ INCLUDE = $(SOURCE_FOLDER)/$(INCLUDES)/includes.h
 AREA = $(SOURCE_FOLDER)/$(INCLUDES)/Area.h
 MENSAJE = $(SOURCE_FOLDER)/$(INCLUDES)/Mensaje.h
 
+BALSA= $(SOURCE_FOLDER)/$(INCLUDES)/balsas.cpp
+
 SV_SEM = $(SOURCE_FOLDER)/$(INCLUDES)/sv_sem.h
 SV_SHM = $(SOURCE_FOLDER)/$(INCLUDES)/sv_shm.h
 
 SERFS = serfs
 NERDS = nerds
-BALSAS = balsas
+BALSAS = balsas2
 
 INIT = inicializa
 FIN = finaliza

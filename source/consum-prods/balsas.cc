@@ -5,9 +5,10 @@
 # Nasif Francisco José      -         101044        #
 # Hejeij Agustin            -                       #
 # Jacinto Renzo             -                       #
-# Fanciotti Tomas           -                       #  
+# Fanciotti Tomas           -         102179        #
 #####################################################
 */
+
 
 #include "../includes/includes.h"
 #include "../includes/Area.h"
@@ -26,7 +27,7 @@ int main(){
     // Semaforos
     sv_sem balsa(SEM_BALSA);
     sv_sem mutex(SEM_MUTEX);
-    sv_sem nerfs(SEM_NERFS);
+    sv_sem nerds(SEM_NERDS);
     sv_sem serfs(SEM_SERFS);
 
     Mensaje dato;
@@ -42,7 +43,7 @@ int main(){
         mutex.post();
   
         cout<<"leido: <"<<dato.getDato()<<">"<<endl;
-        nerfs.post();
+        nerds.post();
         serfs.post();
     }             
     balsa.post();  //libera en cadena a los consumidores

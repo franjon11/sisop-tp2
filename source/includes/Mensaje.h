@@ -1,8 +1,7 @@
 #ifndef Mensaje_h
 #define Mensaje_h
-#import "includes.h"
+#include "includes.h"
 
-using namespace std;
 class Mensaje{
 	char dato [40];
 	public:

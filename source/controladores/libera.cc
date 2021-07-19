@@ -5,7 +5,7 @@
 # Nasif Francisco José      -         101044        #
 # Hejeij Agustin            -                       #
 # Jacinto Renzo             -                       #
-# Fanciotti Tomas           -                       #  
+# Fanciotti Tomas           -         102179        #
 #####################################################
 */
 
@@ -22,7 +22,7 @@ int main(){
     sv_shm a51(AREA51);
     sv_sem balsa(SEM_BALSA);
     sv_sem mutex(SEM_MUTEX);
-    sv_sem nerfs(SEM_NERFS);
+    sv_sem nerfs(SEM_NERDS);
     sv_sem serfs(SEM_SERFS);
 
     cout<<"<== Liberando el area ==>"<<endl;
@@ -36,7 +36,7 @@ int main(){
     mutex.del();
     cout<<"< Liberado el semaforo "<<SEM_MUTEX<<" >"<<endl;
     nerfs.del();
-    cout<<"< Liberado el semaforo "<<SEM_NERFS<<" >"<<endl;
+    cout << "< Liberado el semaforo " << SEM_NERDS << " >" << endl;
     serfs.del();
     cout<<"< Liberado el semaforo "<<SEM_SERFS<<" >"<<endl;
     

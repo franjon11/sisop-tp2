@@ -5,43 +5,77 @@
 # Nasif Francisco José      -         101044        #
 # Hejeij Agustin            -                       #
 # Jacinto Renzo             -                       #
-# Fanciotti Tomas           -                       #  
+# Fanciotti Tomas           -         102179        #
 #####################################################
 */
 
 #include "../includes/includes.h"
-#include "../includes/Area.h"
+#include "../includes/Balsas.h"
 #include "../includes/sv_shm.h"
 #include "../includes/sv_sem.h"
+
 
 int main(){
 
     print_integrantes();
     
     // Area
-    Area* a;
+    Balsas* balsa;
     sv_shm a51(AREA51);
-    a= static_cast <Area*>(a51.map(sizeof(Area)));
+    balsa= reinterpret_cast<Balsas*>(a51.map(sizeof(Balsas)));
     
     // Semaforos
-    sv_sem nerfs(SEM_NERFS,INI_NERFS);
-    sv_sem cons(SEM_BALSA,INI_BALSA);
-    sv_sem mutex(SEM_MUTEX,INI_MUTEX);
+    sv_sem mutex(SEM_MUTEX);
+    sv_sem semaforo_nerds(SEM_NERDS);
+    sv_sem semaforo_serfs(SEM_SERFS);
 
-    string lee;
-    cout<<"Ingrese un string"<<endl;
-    while (cin>>lee){
+    mutex.wait();
 
-        nerfs.wait();
-        cout<<"-- poniendo "<<lee<<endl;
+    balsa->addNerd();
+    switch (balsa->ready()) {
 
-        mutex.wait();
-        cout<<"en el mutex ..."<<endl;
-        a->pone(Mensaje (lee));
-        mutex.post();
+        case FULL_OF_NERDS:
 
-        //balsa.post(); comentado por el error "undeclared identifier .."
+            cout << "Balsa FULL_OF_NERDS" << endl;
+
+            balsa->removeNerd(4);
+            semaforo_nerds.post();
+            semaforo_nerds.post();
+            semaforo_nerds.post();
+            semaforo_nerds.post();
+            break;
+
+        case FULL_OF_SERFS:
+
+            cout << "Balsa FULL_OF_SERFS" << endl;
+
+            balsa->removeSerf(4);
+            semaforo_serfs.post();
+            semaforo_serfs.post();
+            semaforo_serfs.post();
+            semaforo_serfs.post();
+            break;
+
+        case NERDS_AND_SERFS:
+
+            cout << "Balsa NERDS_AND_SERFS" << endl;
+
+            balsa->removeNerd(2);
+            balsa->removeSerf(2);
+            semaforo_nerds.post();
+            semaforo_nerds.post();
+            semaforo_serfs.post();
+            semaforo_serfs.post();
+            break;
+
+        case BALSA_NOT_READY:
+            cout << "La balsa no está lista. Integrantes: " << balsa->getNerds() << " nerds y " << balsa->getSerfs() << " serfs." << endl;
+            break;
     }
-    cout<<" terminado"<<endl;
+
+    mutex.post();
+    semaforo_nerds.wait();
+
+    cout << "El proceso asociado a este NERD, partió en una balsa." << endl;
 }
 
