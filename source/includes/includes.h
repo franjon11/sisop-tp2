@@ -42,7 +42,7 @@ void print_integrantes(){
     cout<<"Integrantes TP2"<<endl;
     cout<<"------------------------"<<endl;
     cout<<"Nasif Francisco José - 101044"<<endl;
-    cout<<"Hejeij Agustín - "<<endl;
+    cout<<"Hejeij Agustín - 102324"<<endl;
     cout<<"Jacinto Renzo - "<<endl;
     cout<<"Fanciotti Tomás - 102179"<<endl;
     cout<<"------------------------"<<endl;
