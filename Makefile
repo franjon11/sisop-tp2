@@ -24,7 +24,7 @@ SV_SHM = $(SOURCE_FOLDER)/$(INCLUDES)/sv_shm.h
 
 SERFS = serfs
 NERDS = nerds
-BALSAS = balsas2
+BALSAS = balsas
 
 INIT = inicializa
 FIN = finaliza

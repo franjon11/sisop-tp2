@@ -36,7 +36,7 @@ int main(){
 
         case FULL_OF_NERDS:
 
-            cout << "Balsa FULL_OF_NERDS" << endl;
+            cout << "Balsa llena: FULL_OF_NERDS" << endl;
 
             balsa->removeNerd(4);
             semaforo_nerds.post();
@@ -47,7 +47,7 @@ int main(){
 
         case FULL_OF_SERFS:
 
-            cout << "Balsa FULL_OF_SERFS" << endl;
+            cout << "Balsa llena: FULL_OF_SERFS" << endl;
 
             balsa->removeSerf(4);
             semaforo_serfs.post();
@@ -58,7 +58,7 @@ int main(){
 
         case NERDS_AND_SERFS:
 
-            cout << "Balsa NERDS_AND_SERFS" << endl;
+            cout << "Balsa llena: NERDS_AND_SERFS" << endl;
 
             balsa->removeNerd(2);
             balsa->removeSerf(2);
