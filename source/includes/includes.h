@@ -43,7 +43,7 @@ void print_integrantes(){
     cout<<"------------------------"<<endl;
     cout<<"Nasif Francisco José - 101044"<<endl;
     cout<<"Hejeij Agustín - 102324"<<endl;
-    cout<<"Jacinto Renzo - "<<endl;
+    cout<<"Jacinto Renzo - 100627"<<endl;
     cout<<"Fanciotti Tomás - 102179"<<endl;
     cout<<"------------------------"<<endl;
 
