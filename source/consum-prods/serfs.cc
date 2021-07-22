@@ -10,7 +10,7 @@
 */
 
 #include "../includes/includes.h"
-#include "../includes/Balsas.h"
+#include "../includes/Queue.h"
 #include "../includes/sv_shm.h"
 #include "../includes/sv_sem.h"
 
@@ -20,9 +20,9 @@ int main(){
     print_integrantes();
     
     // Area
-    Balsas* balsa;
+    Queue* fila;
     sv_shm a51(AREA51);
-    balsa= reinterpret_cast <Balsas*>(a51.map(sizeof(Balsas)));
+    fila= reinterpret_cast <Queue*>(a51.map(sizeof(Queue)));
     
     // Semaforos
     sv_sem mutex(SEM_MUTEX);
@@ -31,14 +31,14 @@ int main(){
 
     mutex.wait();
 
-    balsa->addSerf();
-    switch (balsa->ready()) {
+    fila->addSerf();
+    switch (fila->ready()) {
 
         case FULL_OF_NERDS:
 
             cout << "Balsa FULL_OF_NERDS" << endl;
 
-            balsa->removeNerd(4);
+            fila->removeNerd(4);
             semaforo_nerds.post();
             semaforo_nerds.post();
             semaforo_nerds.post();
@@ -49,7 +49,7 @@ int main(){
 
             cout << "Balsa FULL_OF_SERFS" << endl;
 
-            balsa->removeSerf(4);
+            fila->removeSerf(4);
             semaforo_serfs.post();
             semaforo_serfs.post();
             semaforo_serfs.post();
@@ -60,16 +60,16 @@ int main(){
 
             cout << "Balsa NERDS_AND_SERFS" << endl;
 
-            balsa->removeNerd(2);
-            balsa->removeSerf(2);
+            fila->removeNerd(2);
+            fila->removeSerf(2);
             semaforo_nerds.post();
             semaforo_nerds.post();
             semaforo_serfs.post();
             semaforo_serfs.post();
             break;
 
-        case BALSA_NOT_READY:
-            cout << "La balsa no está lista. Integrantes: " << balsa->getNerds() << " nerds y " << balsa->getSerfs() << " serfs." << endl;
+        case QUEUE_NOT_READY:
+            cout << "La balsa no está lista. Integrantes: " << fila->getNerds() << " nerds y " << fila->getSerfs() << " serfs." << endl;
             break;
     }
 
