@@ -10,8 +10,8 @@ Para correr la simulación, se deberá hacer lo siguiente:
     "./inicializa"
     
 4. Ahora la simulación está iniciada con sus respectivas estructuras (semáforos, mutex, área compartida, etc).
-5. Hay una cola generada donde se irá agregando nerds y serfs para que luego se suban a una balsa cuando ésta se pueda completar con las combinaciones válidas.
-6. Si se quiere agregar un nerf a la cola, en la consola desde la carpeta bin tipear:
+5. Ésto genera una cola donde se irán agregando nerds y serfs para que luego se suban a una balsa siempre y cuando se cumpla una combinación válida de nerds y serfs.
+6. Si se quiere agregar un nerd a la cola, en la consola desde la carpeta bin tipear:
     "./nerds"
     
 7. Si se quiere agregar un serf a la cola, en la consola desde la carpeta bin tipear:
