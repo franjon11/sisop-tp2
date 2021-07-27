@@ -1,6 +1,6 @@
 # sisop-tp2
 
-Para correr el la simulación, se deberá hacer lo siguiente:
+Para correr la simulación, se deberá hacer lo siguiente:
 
 1. Luego de descomprimir el archivo zip, navegar en la consola hasta la carpeta resultante de la extracción y tipear en la consola 
     "make all"
